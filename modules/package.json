@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently npm:start:graph1 npm:start:graph2 npm:serve",
-    "serve": "mkdir -p dist && cd dist && PORT=3001 npx servor",
+    "serve": "mkdirp dist && cd dist && cross-env PORT=3001 npx servor",
     "start:graph1": "webpack --watch --config graph1.config.js",
     "start:graph2": "webpack --watch --config graph2.config.js"
   },
@@ -22,7 +22,9 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "concurrently": "^5.2.0",
-    "webpack": "5.0.0-beta.16",
+    "cross-env": "^7.0.2",
+    "mkdirp": "^1.0.4",
+    "webpack": "5.0.0-beta.20",
     "webpack-cli": "^3.3.11"
   }
 }
